@@ -93,7 +93,7 @@ namespace LogHelper.Encryptions
 
         public static byte[] GetPubKey(this ECParameters eCParameters)
         {
-            return [.. eCParameters.Q.X, .. eCParameters.Q.Y!];
+            return [.. eCParameters.Q.X!, .. eCParameters.Q.Y!];
         }
 
         public static byte[] GetPrvKey(this ECParameters eCParameters)

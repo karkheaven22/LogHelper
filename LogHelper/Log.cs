@@ -5,7 +5,7 @@ namespace LogHelper
 {
     public static class Log
     {
-        public static ILogger Logger => FileLogger.Instance.Logger;
+        public static ILogger Logger => LogHelper.Logger.AppLogger.Instance.Logger;
         public static void Debug(string message) => Logger.Debug(message);
         public static void Debug(Exception exception, string message) => Logger.Debug(exception, message);
         public static void Info(string message) => Logger.Information(message);
