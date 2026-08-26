@@ -21,13 +21,13 @@ jobs:
           dotnet-version: '6.x'
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore LogHelper/LogHelper.csproj
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build LogHelper/LogHelper.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --configuration Release --no-build
+        run: dotnet test LogHelper/LogHelper.csproj --configuration Release --no-build
 
       - name: Pack
         run: |
