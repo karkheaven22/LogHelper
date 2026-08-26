@@ -13,9 +13,6 @@ jobs:
 
     steps:
       - name: Checkout
-        run: |
-          echo "===== Checkout source code ====="
-          echo "Starting checkout..."
         uses: actions/checkout@v4
 
       - name: Setup .NET
@@ -24,7 +21,9 @@ jobs:
           dotnet-version: '6.x'
 
       - name: Restore
-        run: dotnet restore ./LogHelper/LogHelper.csproj
+        run: |
+            echo "===== Restore ====="
+            dotnet restore ./LogHelper/LogHelper.csproj
 
       - name: Build
         run: dotnet build ./LogHelper/LogHelper.csproj --configuration Release --no-restore
