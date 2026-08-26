@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+	<PackageId>CodePlus.UniversalLogger</PackageId>  
     <Authors>CodePlus</Authors>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <ImplicitUsings>enable</ImplicitUsings>
     <NeutralLanguage>en</NeutralLanguage>
     <Nullable>enable</Nullable>
@@ -11,8 +11,8 @@
     <FileVersion>1.0.1</FileVersion>
     <Version>1.0.1</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>UniversalLogger</Title>
     <LangVersion>latest</LangVersion>
+	<PackageLicenseExpression>Unlicense</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
