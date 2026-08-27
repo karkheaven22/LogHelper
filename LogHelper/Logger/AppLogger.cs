@@ -12,8 +12,6 @@ namespace LogHelper.Logger
         private readonly bool _isLoggingEnabled;
         public ILogger Logger { get; }
 
-        public static AppLogger Instance { get; } = new AppLogger();
-
         public AppLogger() : this(DefaultConfiguration()) { }
 
         public AppLogger(IConfiguration configuration)

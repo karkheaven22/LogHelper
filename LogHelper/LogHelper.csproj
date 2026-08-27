@@ -7,13 +7,22 @@
     <Nullable>enable</Nullable>
     <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <Title>UniversalLogger</Title>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
 	<PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+
+	<!-- NuGet metadata -->
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/karkheaven22/LogHelper</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <WarningLevel>6</WarningLevel>
