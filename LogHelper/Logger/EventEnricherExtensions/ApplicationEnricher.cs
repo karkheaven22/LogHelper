@@ -11,7 +11,7 @@ internal class ApplicationEnricher : ILogEventEnricher
         var applicationAssembly = Assembly.GetEntryAssembly();
         var name = applicationAssembly?.GetName().Name ?? string.Empty;
         var version = applicationAssembly?.GetName().Version ?? new Version("0.0.0");
-        logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("ApplicationName", name));
-        logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("ApplicationVersion", version));
+        logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("appName", name));
+        logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("appVersion", version));
     }
 }

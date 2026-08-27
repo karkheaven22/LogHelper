@@ -49,7 +49,7 @@ namespace LogHelper.Logger.EventEnricherExtensions
 
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
-            logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("IpAddress", GetIPAddress(false)));
+            logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("host", GetIPAddress(false)));
         }
     }
 }
