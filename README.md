@@ -1,21 +1,33 @@
-# Common Logging
+# CodePlus.UniversalLogger
 
-A lightweight logging wrapper built on top of [Serilog](https://serilog.net/).
+A lightweight logging wrapper for .NET applications, built on top of [Serilog](https://serilog.net/).
 
-The library provides a simple and consistent logging API for .NET applications,
-while keeping the underlying Serilog implementation isolated from application code.
+`CodePlus.UniversalLogger` provides a simple and consistent logging API while keeping the underlying logging implementation centralized and configurable.
 
 ## Features
 
 - Simple logging API
-- Built on Serilog
+- Built on top of Serilog
 - Supports `Debug`, `Info`, `Warn`, `Error`, and `Fatal`
 - Supports exception logging
-- Supports contextual logging with `ForContext<T>()`
-- Singleton-based logger instance
-- Can be shared across multiple .NET applications
+- Supports Console logging
+- Supports File logging
+- Supports asynchronous logging
+- Configuration through `appsettings.json`
+- ASP.NET Core integration
+- Supports .NET Standard 2.0
+- Supports .NET 6.0
 
-## Usage
+## Installation
+
+Install the package using the .NET CLI:
+
+```bash
+dotnet add package CodePlus.UniversalLogger
+
+## ASP.NET Core Integration
+
+For ASP.NET Core applications, `CodePlus.UniversalLogger` provides an extension method to configure logging during application startup.
 
 ### Basic Logging
 
@@ -29,3 +41,13 @@ Log.Warn("Transaction is taking longer than expected");
 Log.Error("Failed to process transaction");
 
 Log.Fatal("Application cannot continue");
+
+
+### .NET 6+
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.UseLogHelper();
+
+var app = builder.Build();
