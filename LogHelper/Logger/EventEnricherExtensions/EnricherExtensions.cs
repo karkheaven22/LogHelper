@@ -18,4 +18,11 @@ public static class EnricherExtensions
             ? throw new ArgumentNullException(nameof(enrichmentConfiguration))
             : enrichmentConfiguration.With<ApplicationEnricher>();
     }
+
+    public static LoggerConfiguration WithAddress(this LoggerEnrichmentConfiguration enrichmentConfiguration)
+    {
+        return enrichmentConfiguration == null
+            ? throw new ArgumentNullException(nameof(enrichmentConfiguration))
+            : enrichmentConfiguration.With<AddressEnricher>();
+    }
 }

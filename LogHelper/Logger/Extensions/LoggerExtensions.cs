@@ -18,7 +18,7 @@ namespace LogHelper.Logger.Extensions
             return factory;
         }
 
-        public static IHostBuilder UseLogHelper(this IHostBuilder builder)
+        public static IHostBuilder ConfigureLogHelper(this IHostBuilder builder, Action<LoggerConfiguration>? configure = null)
         {
             if (builder == null)
                 throw new ArgumentNullException(nameof(builder));
@@ -38,6 +38,8 @@ namespace LogHelper.Logger.Extensions
                     .Enrich.WithThreadId()
                     .Enrich.WithApplication()
                     .Enrich.FromLogContext();
+
+                configure?.Invoke(configuration);
             });
 
             return builder;
